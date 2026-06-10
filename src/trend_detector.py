@@ -1,19 +1,16 @@
 import pandas as pd
+import json
 
-# Load the CSV
+# Load CSV
 df = pd.read_csv("../data/google_trends.csv")
 
-# Remove incomplete Google Trends rows
+# Remove incomplete rows
 df = df[df["isPartial"] == False]
 
-# Get the last two complete days
+# Last 2 complete days
 today = df.iloc[-1]
 yesterday = df.iloc[-2]
 
-print("\nAURA TREND REPORT")
-print("=" * 40)
-
-# Trend columns only
 trend_columns = [
     "quiet luxury",
     "old money",
@@ -31,28 +28,28 @@ for trend in trend_columns:
     change = current - previous
 
     if change > 0:
-        status = "Rising 📈"
+        status = "Rising"
     elif change < 0:
-        status = "Falling 📉"
+        status = "Falling"
     else:
-        status = "Stable ➖"
+        status = "Stable"
 
     results.append({
         "trend": trend,
-        "current": current,
-        "previous": previous,
-        "change": change,
+        "current": int(current),
+        "previous": int(previous),
+        "change": int(change),
         "status": status
     })
 
 # Sort by biggest increase
 results.sort(key=lambda x: x["change"], reverse=True)
 
-for item in results:
-    print(f"""
-Trend: {item['trend']}
-Current Score: {item['current']}
-Previous Score: {item['previous']}
-Change: {item['change']}
-Status: {item['status']}
-""")
+top_trend = results[0]
+
+# Save JSON report
+with open("../data/trend_report.json", "w") as file:
+    json.dump(top_trend, file, indent=4)
+
+print("AURA Trend Report Saved!")
+print(top_trend)
