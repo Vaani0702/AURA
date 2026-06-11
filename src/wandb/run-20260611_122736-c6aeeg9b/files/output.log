@@ -1,2 +1,0 @@
-Saved to Supabase!
-data=[{'id': 6, 'trend': 'No Significant Trend', 'current_score': 0, 'previous_score': 0, 'change': 0, 'status': 'No Rising Trend Found', 'created_at': '2026-06-11T06:57:39.268578', 'analysis': '**Summary**: The trend remains stagnant with no significant changes.\n**Why it matters**: Indicates a lack of growth or movement in the market.\n**Confidence level**: High (100%), as the data confirms no trend exists, remaining unchanged from the previous score.'}] count=None
