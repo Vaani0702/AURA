@@ -1,16 +1,14 @@
-.env
-.venv/
-__pycache__/
-
-wandb/
-src/wandb/
 # Environment
 .env
 
 # Virtual Environment
 .venv/
 
-# W&B
+# Python
+__pycache__/
+*.pyc
+
+# Weights & Biases
 wandb/
 src/wandb/
 
@@ -19,7 +17,3 @@ data/google_trends.csv
 data/trend_report.json
 data/analysis_report.json
 data/analysis_report.txt
-
-# Python
-__pycache__/
-*.pyc
