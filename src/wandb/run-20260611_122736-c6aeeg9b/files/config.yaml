@@ -1,0 +1,45 @@
+_wandb:
+    value:
+        cli_version: 0.27.2
+        e:
+            lpbn23d6p42ea0djyn6zblu1ishbnuob:
+                apple:
+                    ecpuCores: 4
+                    gpuCores: 7
+                    macModel: MacBookAir10,1
+                    memoryGb: 8
+                    name: Apple M1
+                    pcpuCores: 4
+                    ramTotalBytes: "8589934592"
+                    swapTotalBytes: "2147483648"
+                codePath: src/save_to_supabase.py
+                codePathLocal: save_to_supabase.py
+                cpu_count: 8
+                cpu_count_logical: 8
+                disk:
+                    /:
+                        total: "245107195904"
+                        used: "158707666944"
+                email: vaanisinghnm@gmail.com
+                executable: /Users/vaanisingh/Desktop/AURA/.venv/bin/python
+                git:
+                    commit: 0db4a7ca3118851beb1976721d9b000311279644
+                    remote: https://github.com/Vaani0702/AURA.git
+                host: Vaanis-MacBook-Air.local
+                memory:
+                    total: "8589934592"
+                os: macOS-26.5.1-arm64-arm-64bit-Mach-O
+                program: /Users/vaanisingh/Desktop/AURA/src/save_to_supabase.py
+                python: CPython 3.14.5
+                root: /Users/vaanisingh/Desktop/AURA/src
+                startedAt: "2026-06-11T06:57:36.718195Z"
+                writerId: lpbn23d6p42ea0djyn6zblu1ishbnuob
+        m: []
+        python_version: 3.14.5
+        t:
+            "3":
+                - 2
+            "4": 3.14.5
+            "5": 0.27.2
+            "12": 0.27.2
+            "13": darwin-arm64

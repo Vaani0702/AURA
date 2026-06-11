@@ -4,12 +4,8 @@ import json
 # Load CSV
 df = pd.read_csv("../data/google_trends.csv")
 
-# Remove incomplete rows
+# Remove incomplete Google Trends rows
 df = df[df["isPartial"] == False]
-
-# Last 2 complete days
-today = df.iloc[-1]
-yesterday = df.iloc[-2]
 
 trend_columns = [
     "quiet luxury",
@@ -22,34 +18,62 @@ results = []
 
 for trend in trend_columns:
 
-    current = today[trend]
-    previous = yesterday[trend]
+    # Average of latest 7 days
+    last_7_days = df[trend].tail(7).mean()
 
-    change = current - previous
+    # Average of previous 7 days
+    previous_7_days = df[trend].tail(14).head(7).mean()
 
-    if change > 0:
+    change = round(last_7_days - previous_7_days, 2)
+
+    if change > 1:
         status = "Rising"
-    elif change < 0:
+    elif change < -1:
         status = "Falling"
     else:
         status = "Stable"
 
     results.append({
         "trend": trend,
-        "current": int(current),
-        "previous": int(previous),
-        "change": int(change),
+        "current": float(round(last_7_days, 2)),
+        "previous": float(round(previous_7_days, 2)),
+        "change": float(change),
         "status": status
     })
 
-# Sort by biggest increase
-results.sort(key=lambda x: x["change"], reverse=True)
+print("\nDEBUG\n")
 
-top_trend = results[0]
+for item in results:
+    print(item)
+
+# Sort by strongest growth
+results.sort(
+    key=lambda x: x["change"],
+    reverse=True
+)
+
+# Find only rising trends
+rising_trends = [
+    item
+    for item in results
+    if item["change"] > 0
+]
+
+# Choose top trend
+if rising_trends:
+    top_trend = rising_trends[0]
+else:
+    top_trend = {
+        "trend": "No Significant Trend",
+        "current": 0,
+        "previous": 0,
+        "change": 0,
+        "status": "No Rising Trend Found"
+    }
 
 # Save JSON report
 with open("../data/trend_report.json", "w") as file:
     json.dump(top_trend, file, indent=4)
 
-print("AURA Trend Report Saved!")
+print("\nAURA Trend Report Saved!")
 print(top_trend)

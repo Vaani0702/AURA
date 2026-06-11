@@ -47,13 +47,15 @@ response = client.chat.completions.create(
 )
 
 analysis = response.choices[0].message.content
+with open("../data/analysis_report.txt", "w") as file:
+    file.write(analysis)
 
+with open("../data/analysis_report.json", "w") as file:
+    json.dump({"analysis": analysis}, file)
 print("\nAURA ANALYSIS")
 print("=" * 50)
 print(analysis)
 
-# Save analysis
-with open("../data/analysis_report.txt", "w") as file:
-    file.write(analysis)
+
 
 print("\nAnalysis saved successfully!")
