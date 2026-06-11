@@ -4,3 +4,22 @@ __pycache__/
 
 wandb/
 src/wandb/
+# Environment
+.env
+
+# Virtual Environment
+.venv/
+
+# W&B
+wandb/
+src/wandb/
+
+# Generated Data Files
+data/google_trends.csv
+data/trend_report.json
+data/analysis_report.json
+data/analysis_report.txt
+
+# Python
+__pycache__/
+*.pyc
