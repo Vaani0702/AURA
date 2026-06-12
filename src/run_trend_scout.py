@@ -10,4 +10,4 @@ subprocess.run(["python", "trend_analyst.py"])
 
 subprocess.run(["python", "save_to_supabase.py"])
 
-print("\nAURA Trend Scout Complete!")
+print("\nAURA Trend Scout Complete!")git commit -m "Cleanup gitignore and generated files"
