@@ -17,10 +17,10 @@ key = os.getenv("SUPABASE_KEY")
 supabase = create_client(url, key)
 wandb.init(project="AURA")
 
-with open("../data/trend_report.json", "r") as file:
+with open("data/trend_report.json", "r") as file:
     trend = json.load(file)
 
-with open("../data/analysis_report.json", "r") as file:
+with open("data/analysis_report.json", "r") as file:
     analysis_data = json.load(file)    
 
 data = {

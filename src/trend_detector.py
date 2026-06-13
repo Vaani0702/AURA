@@ -2,7 +2,7 @@ import pandas as pd
 import json
 
 # Load CSV
-df = pd.read_csv("../data/google_trends.csv")
+df = pd.read_csv("data/google_trends.csv")
 
 # Remove incomplete Google Trends rows
 df = df[df["isPartial"] == False]
@@ -72,7 +72,7 @@ else:
     }
 
 # Save JSON report
-with open("../data/trend_report.json", "w") as file:
+with open("data/trend_report.json", "w") as file:
     json.dump(top_trend, file, indent=4)
 
 print("\nAURA Trend Report Saved!")

@@ -16,5 +16,5 @@ pytrends.build_payload(
 
 data = pytrends.interest_over_time()
 
-data.to_csv("../data/google_trends.csv")
+data.to_csv("data/google_trends.csv")
 print("Saved successfully")

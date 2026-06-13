@@ -12,7 +12,7 @@ client = Groq(
 )
 
 # Read trend report JSON
-with open("../data/trend_report.json", "r") as file:
+with open("data/trend_report.json", "r") as file:
     trend_data = json.load(file)
 
 # Build prompt
@@ -47,10 +47,10 @@ response = client.chat.completions.create(
 )
 
 analysis = response.choices[0].message.content
-with open("../data/analysis_report.txt", "w") as file:
+with open("data/analysis_report.txt", "w") as file:
     file.write(analysis)
 
-with open("../data/analysis_report.json", "w") as file:
+with open("data/analysis_report.json", "w") as file:
     json.dump({"analysis": analysis}, file)
 print("\nAURA ANALYSIS")
 print("=" * 50)
