@@ -36,7 +36,7 @@ response = supabase.table("trend_reports").insert(data).execute()
 
 wandb.log({
     "trend": trend["trend"],
-    "change": trend["change"],
+    "change":int(trend["change"]),
     "status": trend["status"]
 })
 
