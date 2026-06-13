@@ -1,0 +1,23 @@
+[
+    {
+        "date": "2026-06-11",
+        "trend": "old money",
+        "current": 8.0,
+        "change": 0.2,
+        "status": "Stable"
+    },
+    {
+        "date": "2026-06-12",
+        "trend": "old money",
+        "current": 9.5,
+        "change": 1.5,
+        "status": "Growing"
+    },
+    {
+        "date": "2026-06-13",
+        "trend": "old money",
+        "current": 10.57,
+        "change": 0.14,
+        "status": "Stable"
+    }
+]

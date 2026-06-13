@@ -1,0 +1,39 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap');
+
+html, body, [class*="css"] {
+    font-family: 'Inter', sans-serif;
+    background-color: #F8F4EE;
+    color: #111111;
+}
+
+.main-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 4rem;
+    text-align: center;
+    color: #111111;
+    margin-bottom: 0;
+}
+
+.subtitle {
+    text-align: center;
+    color: #777777;
+    letter-spacing: 2px;
+    margin-bottom: 3rem;
+}
+
+.aura-card {
+    background: white;
+    border: 1px solid #E5DDD0;
+    border-radius: 18px;
+    padding: 24px;
+}
+
+.gold {
+    color: #B08D57;
+}
+
+.section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
