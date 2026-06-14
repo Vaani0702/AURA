@@ -1,47 +1,48 @@
 import json
-from groq import Groq
-from dotenv import load_dotenv
-import os
 
-load_dotenv()
+with open("data/trend_score.json", "r") as file:
+    trend = json.load(file)
 
-client = Groq(
-    api_key=os.getenv("GROQ_API_KEY")
-)
+name = trend["trend"]
 
-with open("data/discovered_trends.json", "r") as file:
-    trends = json.load(file)
+explanations = {
+    "old money":
+        """
+Old Money reflects growing consumer interest in timeless luxury,
+heritage fashion, premium materials, and understated wealth.
 
-top_trend = trends[0]["trend"]
+Brands likely benefiting:
+- Ralph Lauren
+- Brunello Cucinelli
+- Loro Piana
 
-prompt = f"""
-Explain why this trend may be growing:
+Consumer drivers:
+- Quiet luxury movement
+- Anti-fast-fashion sentiment
+- Long-term value purchasing
+""",
 
-Trend: {top_trend}
+    "quiet luxury":
+        """
+Quiet Luxury emphasizes craftsmanship,
+minimal branding, and premium quality.
 
-Give:
-1. What it is
-2. Why it matters
-3. Luxury/fashion relevance
-4. Confidence score out of 10
+Brands likely benefiting:
+- The Row
+- Loro Piana
+- Hermès
 """
+}
 
-response = client.chat.completions.create(
-    model="llama-3.3-70b-versatile",
-    messages=[
-        {
-            "role": "user",
-            "content": prompt
-        }
-    ]
+report = explanations.get(
+    name.lower(),
+    "No explanation available."
 )
 
-analysis = response.choices[0].message.content
+with open(
+    "data/trend_explanation.txt",
+    "w"
+) as file:
+    file.write(report)
 
-print("\nAURA TREND EXPLANATION\n")
-print(analysis)
-
-with open("data/trend_explanation.txt", "w") as file:
-    file.write(analysis)
-
-print("\nExplanation saved!")
+print(report)
