@@ -19,5 +19,13 @@
         "current": 10.57,
         "change": 0.14,
         "status": "Stable"
+    },
+    {
+        "date": "2026-06-14",
+        "trend": "No Significant Trend",
+        "current": 0,
+        "previous": 0,
+        "change": 0,
+        "status": "No Rising Trend Found"
     }
 ]
