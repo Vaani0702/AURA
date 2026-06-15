@@ -1,69 +1,48 @@
 import pandas as pd
 import json
+import os
 
-# Load CSV
-df = pd.read_csv("data/google_trends.csv")
+if not os.path.exists(
+    "data/google_trends.csv"
+):
+    print("No trend data found.")
+    exit()
 
-# Remove incomplete Google Trends rows
-df = df[df["isPartial"] == False]
-
-trend_columns = [
-    "quiet luxury",
-    "old money",
-    "suede",
-    "minimalism"
-]
-
-results = []
-
-for trend in trend_columns:
-
-    # Average of latest 7 days
-    last_7_days = df[trend].tail(7).mean()
-
-    # Average of previous 7 days
-    previous_7_days = df[trend].tail(14).head(7).mean()
-
-    change = round(last_7_days - previous_7_days, 2)
-
-    if change > 1:
-        status = "Rising"
-    elif change < -1:
-        status = "Falling"
-    else:
-        status = "Stable"
-
-    results.append({
-        "trend": trend,
-        "current": float(round(last_7_days, 2)),
-        "previous": float(round(previous_7_days, 2)),
-        "change": float(change),
-        "status": status
-    })
-
-print("\nDEBUG\n")
-
-for item in results:
-    print(item)
-
-# Sort by strongest growth
-results.sort(
-    key=lambda x: x["change"],
-    reverse=True
+df = pd.read_csv(
+    "data/google_trends.csv"
 )
 
-# Find only rising trends
-rising_trends = [
-    item
-    for item in results
-    if item["change"] > 0
-]
+trend_scores = {}
 
-# Choose top trend
-if rising_trends:
-    top_trend = rising_trends[0]
-else:
-    top_trend = {
+for column in df.columns:
+
+    if column.lower() == "date":
+        continue
+
+    try:
+
+        values = df[column].dropna()
+
+        if len(values) < 2:
+            continue
+
+        current = values.iloc[-1]
+        previous = values.iloc[-2]
+
+        change = current - previous
+
+        trend_scores[column] = {
+            "current": float(current),
+            "previous": float(previous),
+            "change": float(change)
+        }
+
+    except:
+        pass
+
+if not trend_scores:
+
+    result = {
         "trend": "No Significant Trend",
         "current": 0,
         "previous": 0,
@@ -71,9 +50,45 @@ else:
         "status": "No Rising Trend Found"
     }
 
-# Save JSON report
-with open("data/trend_report.json", "w") as file:
-    json.dump(top_trend, file, indent=4)
+else:
 
-print("\nAURA Trend Report Saved!")
-print(top_trend)
+    top_trend = max(
+        trend_scores,
+        key=lambda x:
+        trend_scores[x]["change"]
+    )
+
+    data = trend_scores[top_trend]
+
+    result = {
+        "trend": top_trend,
+        "current": round(
+            data["current"], 2
+        ),
+        "previous": round(
+            data["previous"], 2
+        ),
+        "change": round(
+            data["change"], 2
+        ),
+        "status": (
+            "Growing"
+            if data["change"] > 0
+            else "Falling"
+        )
+    }
+
+with open(
+    "data/trend_report.json",
+    "w"
+) as file:
+
+    json.dump(
+        result,
+        file,
+        indent=4
+    )
+
+print("\nTrend Detection Complete")
+print("=" * 40)
+print(result)
