@@ -21,7 +21,6 @@ The long-term vision is to build a complete intelligence platform with multiple 
 ---
 
 ## Features
-
 ### Trend Scout Agent (Phase 1)
 
 ✅ Google Trends Data Collection
