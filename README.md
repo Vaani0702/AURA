@@ -176,7 +176,7 @@ The pipeline will:
 * [ ] Forecast Generation
 * [ ] Confidence Scoring
 
----
+
 
 ## Future Vision
 
@@ -189,7 +189,7 @@ AURA aims to evolve into a full multi-agent intelligence platform capable of:
 * Research Experimentation
 * Executive Intelligence Reporting
 
----
+
 
 ## Author
 
