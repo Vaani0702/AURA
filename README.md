@@ -181,6 +181,10 @@ Store intelligence reports in Supabase for future analysis.
 * Git
 * GitHub
 
+
+
+<img width="1536" height="1024" alt="image" src="https://github.com/user-attachments/assets/5fce33e8-4ea7-492a-b14a-bce42946cf92" />
+
 ---
 
 # Current Industry Demonstration
