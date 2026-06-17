@@ -2,15 +2,13 @@
 
 ### *Luxury Trend Intelligence*
 
-> *Where artificial intelligence meets the future of luxury.*
+
 
 ---
 
 <p align="center">
 
-**AI • Fashion • Forecasting • Intelligence**
 
-*Discover tomorrow's luxury trends before they happen.*
 
 </p>
 
@@ -30,9 +28,7 @@ Think of it as an AI analyst for the luxury market.
 
 ## Philosophy
 
-Luxury is never loud.
 
-Neither is intelligence.
 
 AURA is designed with the same principles that define the world's leading fashion houses:
 
@@ -243,17 +239,13 @@ Timeless.
 
 Computer Science Engineering Student
 
-Aspiring AI/ML Engineer
 
-Building intelligent systems that transform data into strategic insight.
 
 ---
 
 <p align="center">
 
-### *Luxury is not predicted.*
 
-## **It is discovered.**
 
 **AURA**
 
