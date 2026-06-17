@@ -1,198 +1,260 @@
 # AURA
 
-AI-powered trend intelligence platform that discovers emerging trends, analyzes signals using AI, stores insights in a database, and tracks experiments for future research and forecasting.
+### *Luxury Trend Intelligence*
+
+> *Where artificial intelligence meets the future of luxury.*
 
 ---
 
-## Overview
+<p align="center">
 
-AURA is a multi-agent intelligence system being built to discover, analyze, and forecast trends.
+**AI • Fashion • Forecasting • Intelligence**
 
-The first completed component is the **Trend Scout Agent**, which:
+*Discover tomorrow's luxury trends before they happen.*
 
-* Collects Google Trends data
-* Detects emerging or declining trends
-* Uses AI to generate insights
-* Stores results in Supabase
-* Tracks experiments using Weights & Biases (W&B)
+</p>
 
-The long-term vision is to build a complete intelligence platform with multiple specialized AI agents working together.
+---
+
+## The Vision
+
+Luxury moves before the world notices.
+
+AURA is an AI-powered intelligence platform built to discover, analyze and forecast emerging trends across the global luxury fashion industry.
+
+Instead of relying on intuition, AURA transforms scattered digital signals into executive-level intelligence for brands, researchers and decision makers.
+
+Think of it as an AI analyst for the luxury market.
+
+---
+
+## Philosophy
+
+Luxury is never loud.
+
+Neither is intelligence.
+
+AURA is designed with the same principles that define the world's leading fashion houses:
+
+* Precision
+* Simplicity
+* Elegance
+* Timeless Design
+
+Every insight is generated from data.
+
+Every prediction is backed by signals.
+
+Every interface is built to feel editorial rather than technical.
+
+---
+
+## Intelligence Pipeline
+
+```
+Google Trends
+        │
+        ▼
+Reddit Signals
+        │
+        ▼
+Fashion News
+        │
+        ▼
+Signal Fusion Engine
+        │
+        ▼
+AI Executive Analysis
+        │
+        ▼
+Forecast Engine
+        │
+        ▼
+Interactive Dashboard
+```
 
 ---
 
 ## Features
-### Trend Scout Agent (Phase 1)
 
-✅ Google Trends Data Collection
+### Trend Discovery
 
-✅ Trend Detection Engine
+Monitor emerging movements across luxury fashion.
 
-✅ 7-Day Trend Comparison
+### Signal Fusion
 
-✅ AI-Powered Analysis (Groq + Llama)
+Combine multiple intelligence sources into a unified confidence score.
 
-✅ JSON Report Generation
+### Executive AI Reports
 
-✅ Supabase Database Storage
+Automatically generate business-ready market insights.
 
-✅ Weights & Biases Experiment Tracking
+### Historical Tracking
 
-✅ One-Command Pipeline Execution
+Track trend evolution over time.
+
+### Forecasting
+
+Estimate future momentum using machine learning.
+
+### Cloud Database
+
+Store intelligence reports securely using Supabase.
+
+### Automation
+
+Daily trend collection powered by GitHub Actions.
+
+### Interactive Dashboard
+
+A luxury-inspired Streamlit interface designed for executive decision making.
+
+---
+
+## Technology
+
+### Artificial Intelligence
+
+* Large Language Models
+* Machine Learning
+* Trend Forecasting
+* Signal Fusion
+
+### Data
+
+* Google Trends
+* Reddit Signals
+* Historical Trend Memory
+* JSON Intelligence Pipeline
+
+### Backend
+
+* Python
+* Pandas
+* NumPy
+* Supabase
+
+### Visualization
+
+* Streamlit
+* Interactive Analytics
+* Executive Dashboard
+
+### DevOps
+
+* Git
+* GitHub Actions
+* Automation
+* Version Control
 
 ---
 
 ## Architecture
 
-Google Trends
-
-↓
-
-Trend Collector
-
-↓
-
-Trend Detector
-
-↓
-
-Groq AI Analysis
-
-↓
-
-JSON Reports
-
-↓
-
-Supabase Database
-
-↓
-
-W&B Experiment Tracking
-
----
-
-## Tech Stack
-
-### Backend
-
-* Python
-
-### Data Processing
-
-* Pandas
-
-### AI Model
-
-* Groq
-* Llama 3
-
-### Database
-
-* Supabase
-
-### Experiment Tracking
-
-* Weights & Biases (W&B)
-
-### Version Control
-
-* Git
-* GitHub
-
----
-
-## Project Structure
-
-```text
-AURA/
-
-├── data/
-│   ├── google_trends.csv
-│   ├── trend_report.json
-│   └── analysis_report.txt
-│
-├── src/
-│   ├── google_trends_collector.py
-│   ├── trend_detector.py
-│   ├── trend_analyst.py
-│   ├── save_to_supabase.py
-│   └── run_trend_scout.py
-│
-├── .env
-├── .gitignore
-└── README.md
 ```
+src/
 
-## How To Run
+collectors/
+    Google Trends
+    Reddit Discovery
+    News Discovery
 
-Activate virtual environment:
+engines/
+    Trend Detection
+    Intelligence Engine
+    Forecast Engine
 
-```bash
-source .venv/bin/activate
+database/
+    Supabase
+
+pipeline/
+    Daily Automation
+
+dashboard/
+    Streamlit
 ```
-
-Run the full pipeline:
-
-```bash
-python run_trend_scout.py
-```
-
-The pipeline will:
-
-1. Collect Google Trends data
-2. Detect trend changes
-3. Generate AI analysis
-4. Save results to Supabase
-5. Log experiment metrics to W&B
 
 ---
 
 ## Current Progress
 
-### Phase 1 — Trend Scout
+| Module           | Status      |
+| ---------------- | ----------- |
+| Trend Collection | Complete    |
+| Trend Detection  | Complete    |
+| AI Analysis      | Complete    |
+| Signal Fusion    | Complete    |
+| Forecasting      | In Progress |
+| Dashboard        | In Progress |
+| Research Engine  | Planned     |
 
-* [x] Data Collection
-* [x] Trend Detection
-* [x] AI Analysis
-* [x] Supabase Integration
-* [x] W&B Integration
-* [x] One-Command Pipeline
+---
 
-### Phase 2 — Sentiment Analyst
+## Long-Term Vision
 
-* [ ] News Collection
-* [ ] Sentiment Detection
-* [ ] Sentiment Database Storage
+AURA is being developed into a complete AI-powered luxury intelligence platform capable of:
 
-### Phase 3 — Cultural Radar
+* Discovering emerging fashion movements
+* Forecasting consumer behavior
+* Monitoring luxury brands
+* Tracking cultural shifts
+* Supporting strategic decision making
 
-* [ ] Cultural Event Detection
-* [ ] Signal Extraction
-* [ ] Impact Scoring
+The long-term objective is to build a research-grade intelligence system capable of producing executive reports for the luxury industry.
 
-### Phase 4 — Forecast Synthesizer
+---
 
-* [ ] Multi-Agent Coordination
-* [ ] Forecast Generation
-* [ ] Confidence Scoring
+## Design Language
 
+Inspired by:
 
+* Dior
+* Vogue Business
+* Apple
+* Bloomberg
+* Financial Times
 
-## Future Vision
+Editorial.
 
-AURA aims to evolve into a full multi-agent intelligence platform capable of:
+Minimal.
 
-* Trend Discovery
-* Sentiment Analysis
-* Cultural Signal Detection
-* Forecasting
-* Research Experimentation
-* Executive Intelligence Reporting
+Elegant.
 
+Timeless.
 
+---
+
+## Future Roadmap
+
+* Live News Intelligence
+* Reddit API Integration
+* Multi-Agent Reasoning
+* LLM Research Reports
+* Brand Intelligence
+* Interactive Forecasting
+* Portfolio Analytics
+* Automated Daily Briefings
+
+---
 
 ## Author
 
-Vaani Singh
+**Vaani Singh**
 
+Computer Science Engineering Student
 
+Aspiring AI/ML Engineer
+
+Building intelligent systems that transform data into strategic insight.
+
+---
+
+<p align="center">
+
+### *Luxury is not predicted.*
+
+## **It is discovered.**
+
+**AURA**
+
+</p>
