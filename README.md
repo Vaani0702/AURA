@@ -242,4 +242,11 @@ The long-term objective is to evolve AURA into a modular multi-agent intelligenc
 *AI-Powered Trend Intelligence Platform*
 
 </p>
-Vaani Singh
+
+## Author
+
+**Vaani Singh**
+
+Computer Science Engineering Student
+
+
